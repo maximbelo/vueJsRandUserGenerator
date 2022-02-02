@@ -8,7 +8,19 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <!-- Everything has to be done in this 'app' div as this is what we are mounted on -->
+    <div id="app">
+      <!-- v-bind: to add src -->
+      <!-- Could just use the : instead as it works as a shortcut -->
+      <img
+        :class="gender"
+        v-bind:src="picture"
+        :alt="`${firstName} ${lastName}`"
+      />
+      <h1>{{firstName}} {{lastName}}</h1>
+      <h3>Email: {{email}}</h3>
+      <button :class="gender">Get Random User</button>
+    </div>
 
     <script src="https://unpkg.com/vue@3.0.5"></script>
     <script src="app.js"></script>
